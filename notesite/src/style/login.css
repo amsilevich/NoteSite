@@ -1,0 +1,252 @@
+@font-face {
+	font-family: 'Worksans'; 
+	src: url(../fonts/worksans.ttf); 
+}
+
+.blur {
+    display: none;
+    position: absolute;
+    width: 1920px;
+    height: 1340px;
+    left: 0px;
+    top: 89px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.blur.active {
+    display: block;
+}
+
+.blur .form-out {
+    position: absolute;
+    width: 520px;
+    height: 534px;
+    left: 700px;
+    top: 140px;
+    background: #000000;
+    border-radius: 17px;
+}
+
+.blur .form-out .form-welcome {
+    position: absolute;
+    width: 392px;
+    height: 47px;
+    left: 64px;
+    top: 40px;
+    background: #FFFFFF;
+    border-radius: 17px;
+}
+
+.blur .form-out .form-welcome .welcome-text {
+    position: absolute;
+    width: 350px;
+    height: 70px;
+    left: 36px;
+    top: 5px;
+    font-family: 'Worksans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: rgba(0, 0, 0, 0.96);
+}
+
+.blur .form-in {
+    position: absolute;
+    width: 392px;
+    height: 375px;
+    left: 64px;
+    top: 110px;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+
+.blur .intro-text {
+    position: absolute;
+    width: 289px;
+    height: 44px;
+    left: 60px;
+    top: 20px;
+    font-family: 'worksans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
+}
+
+.blur .form-in .password::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+
+.blur .form-in .password:focus {
+    color: #212529;
+    transition: background-color 0.15s ease-in-out;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.blur .form-in .eye {
+    position: absolute;
+    cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+    width: 32px;
+    height: 19px;
+    top:199px;
+    left:300px;
+}
+
+
+.blur .form-in .eye-img {
+    width: 34px;
+    height: 20px;
+}
+
+.blur .form-in .password{
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 73px;
+
+    width: 224px;
+    height: 69px;
+    left: 36px;
+    top: 175px;
+    border: 0px;
+    background: #FFEFEF;
+    font-family: 'worksans';
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.blur .form-in .username{
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    width: 277px;
+    height: 69px;
+    left: 36px;
+    top: 80px;
+    border: 0px;
+    background: #FFEFEF;
+    font-family: 'worksans';
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.blur .form-in .username::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+
+.blur .form-in .username:focus {
+    color: #212529;
+    transition: background-color 0.15s ease-in-out;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.blur .form-in .sign-in{
+    position: absolute;
+    cursor: pointer;
+    width: 160px;
+    height: 70px;
+    left: 25px;
+    top: 280px;
+    border-radius: 19px;
+    border:0px;
+    background:#E46464;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear; 	
+}
+
+.blur .form-in .sign-in:hover {
+    background: #b83e3e;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear; 
+}
+
+.blur .form-in .sign-up{
+    position: absolute;
+    cursor: pointer;
+    width: 160px;
+    height: 70px;
+    right: 25px;
+    top: 280px;
+    border-radius: 19px;
+    border:0px;
+    background: #A5A5A5;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear; 
+}
+
+.blur .form-in .sign-up:hover {
+    background: #706f6f;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear; 
+}
+
+.blur .form-in .sign-in .sign-in-text {
+    position: absolute;
+    width: 125px;
+    height: 165px;
+    left: 18px;
+    top: 14px;
+    font-family: 'worksans';
+    letter-spacing: -1px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 40px;
+    color: #ffffff;
+}
+
+.blur .form-in .sign-up .sign-up-text {
+    position: absolute;
+    width: 140px;
+    height: 165px;
+    left: 11px;
+    top: 14px;
+    font-family: 'worksans';
+    letter-spacing: -1px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 40px;
+    color: #ffffff;
+}
+
+.blur .form-out .exit {
+    position: absolute;
+    cursor: pointer;
+    width: 31px;
+    height: 31px;
+    left: 0px;
+    top: 0px;
+}
+
+.blur .form-out .exit-btn {
+    position: absolute;
+    cursor: pointer;
+    width: 31px;
+    height: 31px;   
+    left: 475px;
+    top: 15px;
+    background-color: inherit;
+    border: 0px; 
+}
+

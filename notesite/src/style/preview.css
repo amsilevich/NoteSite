@@ -1,0 +1,151 @@
+@font-face {
+	font-family: 'Rosarivo'; 
+	src: url(../fonts/rosarivo.ttf); 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    overflow-x: hidden; 
+}
+
+.preview {
+    position: relative;
+    width: 1920px;
+    height: 5000px;
+    background: #FFFFFF;
+}
+
+.navigate-bar {
+    position: absolute;
+    width: 1920px;
+    height: 89px;
+    left: 0px;
+    top: 0px;
+    background: #000000;
+}
+
+.logo {
+    position: absolute;
+    cursor: pointer; 
+    width: 246px;
+    height: 89px;
+    left: 0px;
+    top: -2px;
+}
+
+.login {
+    position: absolute;
+    width: 61px;
+    height: 59px;
+    right: 25px;
+    top: 15px;
+}
+
+.logout {
+    position: absolute;
+    width: 70px;
+    height: 59px;
+    right: 25px;
+    top: 15px;
+}
+
+.contact-us {
+    position: absolute;
+    width: 61px;
+    height: 59px;
+    right: 135px;
+    top: 15px;
+}
+
+.image-up {
+    position: absolute;
+    width: 800px;
+    height: 340px;
+    left: 90px;
+    top: 170px;
+    border-radius: 120px;
+    border: 5px solid #950000;
+}
+
+.image-down {
+    position: absolute;
+    width: 800px;
+    height: 340px;
+    left: 1031px;
+    top: 565px;
+    background: #E08787;
+    border-radius: 120px;
+    border: 5px solid #950000;
+}
+
+.title-up {
+    text-decoration-line:underline;
+    text-decoration-style:solid;
+    text-decoration-color:#000000;
+    position: absolute;
+    width: 1112px;
+    height: 133px;
+    left: 943px;
+    top: 174px;
+
+    font-family: 'Rosarivo';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 101px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.title-down {
+    text-decoration-line:underline;
+    text-decoration-style:solid;
+    text-decoration-color:#000000;
+    position: absolute;
+    width: 912px;
+    height: 133px;
+    left: 90px;
+    top: 576px;
+    
+    font-family: 'Rosarivo';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 101px;
+    
+    color: #000000;
+}
+
+.text-up {
+    position: absolute;
+    width: 757px;
+    height: 162px;
+    left: 1040px;
+    top: 286px;
+    font-family: 'Rosarivo';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 52px;
+    text-align: right;
+    color: #000000;
+}
+
+.text-down {
+    position: absolute;
+    width: 757px;
+    height: 98px;
+    left: 90px;
+    top: 688px;
+    font-family: 'Rosarivo';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 52px;
+    color: #000000;
+}
