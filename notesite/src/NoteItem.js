@@ -6,11 +6,12 @@ import PinImg from './images/Pin.png'
 
 
 function NoteItem({note}) {
-    console.log("note" + note.title);
+    let {currentId, setEditorOptions} = useContext(Context);
+    // console.log("note" + note.title);
     const {deleteNote, pinNote} = useContext(Context);
-    const blur_id = 'blur'+note.id;
 
     function openOptions() {
+        console.log(note)  
         document.getElementById(note.id + '').style.display = 'block';
     }
 
@@ -19,8 +20,9 @@ function NoteItem({note}) {
     }
 
     function openEditor() {
-        console.log(note.id);
-        document.getElementById('editor'+note.id).style.display = 'block';
+        console.log('openeditor: ' + note.id)
+        setEditorOptions(note);
+        document.getElementById('editor').style.display = 'block';
     }
 
     return (        

@@ -8,6 +8,8 @@ import EyeImg from './images/Eye.png'
 import EyeCrossImg from './images/EyeCross.png'
 import SiteOptionsImg from './images/SiteOptions.png'
 import SiteIntroImg from './images/SiteIntro.png'
+import { getNotesView } from './services/BackApi';
+import { useState } from 'react';
 
 
 
@@ -27,12 +29,12 @@ function Preview() {
 
     function signIn() {
         document.location.href += 'login';
-        console.log(document.location.href);
+        // console.log(document.location.href);
     }
       
     function signUp() {
         document.location.href += 'login';
-        console.log(document.location.href);
+        // console.log(document.location.href);
     } 
 
     function showPassword() {
@@ -75,7 +77,7 @@ function Preview() {
                     You have the option to delete - 
                     leave only the best notes. 
                     You can add a new note or edit existing one 
-                    at any time
+                    at any time 
                 </div>
             </div>
             <div className='blur' id="login_icon"> 
