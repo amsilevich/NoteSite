@@ -9,71 +9,37 @@ import Creator from './Creator'
 import Editor from './Editor';
 import { Context } from './Context';
 import NoteItem from './NoteItem';
-import { getNotesView, changeNoteView, deleteNoteView, pinNoteView, addNoteView } from './services/BackApi';
+import { getNotesView, changeNoteView, deleteNoteView, pinNoteView, unpinNoteView, addNoteView } from './services/BackApi';
 
 var currentId = { id: 0 };
 
 function Login() {
-    const [notes, setNotes] = useState([
-   ])  
+    const [notes, setNotes] = useState([])  
         getNotesView({setNotes});
  
     function changeNote(id, title, text) {
-        // setNotes(notes.map(note=>{
-        //     if (note.id == currentId) {
-        //         note.title = title;
-        //         note.text = text;
-        //     }
-        //     return note;
-        // }))
         console.log(currentId['id'])
-         changeNoteView(currentId['id'], title, text)
+        changeNoteView(currentId['id'], title, text)
     }
 
     function addNote(title, text) {
-
-        // let maxId = 0;
-        // console.log(notes);
-        // for (let i = 0; i < notes.length; i++) {
-        //     if (notes[i].id >= maxId) {
-        //         maxId = notes[i].id; 
-        //     }
-        // }
-        // console.log(maxId + 1);
-        // setNotes([...notes, {id: maxId + 1, title:title, text:text}])
-        // return notes.length;
-        addNoteView(currentId, title, text)
-    }
-
-    function rebuildIds(notes) {
-        let curId = 0;
-        notes = notes.map(note=>{
-            note.id = curId;
-            curId++;
-            return note;
-        })
+        addNoteView(title, text)
     }
 
     function deleteNote(id) {
-        // let changedNotes = notes.filter(note=>note.id != id);
-
-        // setNotes(changedNotes)
         deleteNoteView(id)
         console.log(notes);
     }
 
-    function pinNote(id) {
-    //     let changedNotes = [...(notes.filter(note=>note.id == id)), ...(notes.filter(note=>note.id != id))];
+    function pinNote(id, isPinned) {
+        currentId['id'] = id;
 
-    //     setNotes(changedNotes)
-        pinNoteView(id)
+        pinNoteView(id, isPinned)
+        document.getElementById(currentId['id'] + '').style.display = 'none';
     }
 
     function setEditorOptions(note) {
-
-        console.log(note.id)
         currentId['id'] = note.id;
-        console.log(currentId['id'])
         document.getElementById('editor-title').value = note.title;
         document.getElementById('editor-text').value = note.text;
     }
@@ -84,8 +50,6 @@ function Login() {
         }
         return notes.filter(note=>note.id == currentId['id'])
     }
-
-
 
     return (
         <div className='preview'>

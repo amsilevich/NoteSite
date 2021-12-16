@@ -21,12 +21,25 @@
 
 .list .border { 
     position:relative;
+    margin-left: 74px;      
+    margin-bottom: 50px;
+    width: 298px;
+    height: 373px;      
+
+    background: #fff6d1;
+    border: 3px solid #9D9D9D;
+    box-sizing: border-box;
+    border-radius: 45px;
+}
+
+.list .border_pinned { 
+    position:relative;
     margin-left: 74px;
     margin-bottom: 50px;
     width: 298px;
     height: 373px;
 
-    background: #FFF4F4;
+    background: #ffe1e1;
     border: 3px solid #9D9D9D;
     box-sizing: border-box;
     border-radius: 45px;
@@ -41,7 +54,7 @@
     background: #ffffff;
     border: 3px solid #FE9A9A;
     box-sizing: border-box;
-    border-radius: 45px;
+    border-radius: 45px;    
 }
 
 .title {
@@ -77,7 +90,8 @@
 
     overflow-x:hidden;
     overflow-y:hidden;
-
+    
+    white-space:pre-wrap;
     word-wrap: break-word;
     font-family:'rosarivo';
     font-style: normal;
