@@ -27,7 +27,7 @@ function Creator() {
                 <textarea class='editor-title' wrap='off' placeholder='Title' id='title'></textarea> 
                 <textarea class='editor-text'  placeholder='Text of my new note...' id='text'></textarea> 
                 <button class='save-button' onClick={saveNewNote}>Save</button>
-                <button><img class='exit-editor' src={ExitEditorImg} onClick={exitCreator}/></button>
+                <button class='exit-editor'><img class='exit-editor-img' src={ExitEditorImg} onClick={exitCreator}/></button>
             </div> 
         </div>
     )

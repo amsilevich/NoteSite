@@ -66,16 +66,3 @@ export function addNoteView(title, text) {
         })
     }).then(data=>data.json()).then(data=>console.log(data))
 }
-
-
-fetch('http://127.0.0.1:8000/api/auth/register/', {
-    method: 'POST',
-    headers: {
-        'Content-type': 'application/json;charset=utf-8'
-    },
-    body: JSON.stringify({
-        "email": "testuser@yopmail.com",
-        "password": "12345678",
-        "username": "testuser"
-    })
-}).then(data=>data.json()).then(data=>console.log(data))

@@ -32,7 +32,7 @@ function Editor() {
                 <textarea class='editor-title' wrap='off' placeholder='Title' id='editor-title'>{note.title}</textarea> 
                 <textarea class='editor-text'  placeholder='Text of my new note...' id='editor-text'>{note.text}</textarea> 
                 <button onClick={saveNote} class='save-button'>Save</button>
-                <button><img class='exit-editor' src={ExitEditorImg} onClick={exitEditor}/></button>
+                <button class='exit-editor'><img class='exit-editor-img' src={ExitEditorImg} onClick={exitEditor}/></button>
             </div> 
         </div>
     )
