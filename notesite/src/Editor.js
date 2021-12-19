@@ -12,8 +12,6 @@ function Editor() {
 
     function exitEditor() {
         document.getElementById('editor').style.display = 'none';
-        // document.getElementById('editor-title').value =note.title
-        // document.getElementById('editor-text').value = note.text
     }
     
     function saveNote() {

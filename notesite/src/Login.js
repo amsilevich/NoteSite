@@ -1,40 +1,48 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
-
+import { useReducer } from 'react';
 import LogoImg from './images/Logo.jpg'
 import LogoutImg from './images/Logout.jpg'
 import ContactUsImg from './images/ContactUs.jpg'
 import NoteList from './NoteList'
 import Creator from './Creator'
 import Editor from './Editor';
-import { Context } from './Context';
+import { reducer } from './SignIn';
+import { Context, ContextDispatch } from './Context';
 import NoteItem from './NoteItem';
 import { getNotesView, changeNoteView, deleteNoteView, pinNoteView, unpinNoteView, addNoteView } from './services/BackApi';
 
 var currentId = { id: 0 };
 
 function Login() {
+    const [state, dispatch] = useReducer(reducer, {
+        LoadedData: false,
+    });
+
     const [notes, setNotes] = useState([])  
-        getNotesView({setNotes});
- 
+
+    if (state['LoadedData'] == false) {
+        getNotesView({setNotes, dispatch})
+    }
+
     function changeNote(id, title, text) {
         console.log(currentId['id'])
-        changeNoteView(currentId['id'], title, text)
+        changeNoteView(currentId['id'], title, text, {setNotes, dispatch})
     }
 
     function addNote(title, text) {
-        addNoteView(title, text)
+        addNoteView(title, text, {setNotes, dispatch})
     }
 
     function deleteNote(id) {
-        deleteNoteView(id)
+        deleteNoteView(id, {setNotes, dispatch})
         console.log(notes);
     }
 
     function pinNote(id, isPinned) {
         currentId['id'] = id;
 
-        pinNoteView(id, isPinned)
+        pinNoteView(id, isPinned, {setNotes, dispatch})
         document.getElementById(currentId['id'] + '').style.display = 'none';
     }
 

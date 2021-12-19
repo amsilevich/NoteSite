@@ -4,8 +4,6 @@ import PlusImg from './images/Plus.png'
 import './style/notes-list.css'
 
 function NewItem() {
-    const { notes, addNote } = useContext(Context);
-
     function openEditor() {
         document.getElementById('creator').style.display = 'block';
     }

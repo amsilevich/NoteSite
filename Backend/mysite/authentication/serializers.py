@@ -17,15 +17,15 @@ class CustomUserSerializer(serializers.ModelSerializer):
     """
     Currently unused in preference of the below.
     """
-    email = serializers.EmailField(
-        required=True
-    )
+    # email = serializers.EmailField(
+    #     required=True
+    # )
     username = serializers.CharField()
     password = serializers.CharField(min_length=8, write_only=True)
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'username', 'password')
+        fields = ('username', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):

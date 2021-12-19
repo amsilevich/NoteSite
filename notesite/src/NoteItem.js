@@ -10,16 +10,12 @@ function NoteItem({note}) {
     const {setEditorOptions, deleteNote, pinNote} = useContext(Context);
 
     function openOptions() {
-        //if (counter == 0) return;
-        //counter++;
-        console.log("HERE AGAIN: " + note.id)  
+        // console.log("HERE AGAIN: " + note.id)  
         document.getElementById(note.id + '').style.display = 'block';
     }
 
     function closeOptions() {
-        //counter--;
-        console.log("CLOSE: " + note.id)  
-
+        // console.log("CLOSE: " + note.id)  
         document.getElementById(note.id + '').style.display = 'none';
     }
 

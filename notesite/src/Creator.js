@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useState } from 'react';
 import { Context } from './Context';
 import ExitEditorImg from './images/ExitEditor.png'
 import './style/note-editor.css'

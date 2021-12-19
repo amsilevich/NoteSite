@@ -58,7 +58,7 @@ class NoteCreate(APIView):
 
 class NoteList(APIView):
     def get(self,request):
-        notes = Note.objects.order_by('-isPinned','id')  
+        notes = Note.objects.order_by('-isPinned', 'id')  
         serializer_class = NoteSerializer(notes, many=True)
         return Response(serializer_class.data)
 

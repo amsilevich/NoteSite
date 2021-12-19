@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import ExitImg from './images/Exit.png'
 import LogoImg from './images/Logo.jpg'
@@ -8,17 +8,26 @@ import EyeImg from './images/Eye.png'
 import EyeCrossImg from './images/EyeCross.png'
 import SiteOptionsImg from './images/SiteOptions.png'
 import SiteIntroImg from './images/SiteIntro.png'
-import { getNotesView } from './services/BackApi';
+import { createUserView, getNotesView, getTokensView, setUpNotesView } from './services/BackApi';
 import { useState } from 'react';
+import { loginSucceed, reducer } from  './SignIn'
+import { useReducer } from 'react'
 
 
 
 import $ from 'jquery'
 import './style/login.css'
 import './style/preview.css'
+import { ContextDispatch } from './Context';
+
 
 function Preview() {
+    localStorage.clear();
 
+    const [state, dispatch] = useReducer(reducer, {
+        Authorized: false,
+    });
+      
     function open_login_icon(id_popap) {
         $("#login_icon").addClass('active');
     }
@@ -27,14 +36,27 @@ function Preview() {
         $("#login_icon").removeClass('active');
     }
 
-    function signIn() {
-        document.location.href += 'login';
-        // console.log(document.location.href);
+    async function getTokens(username, password) {
+        await getTokensView(username, password, {dispatch})
+    }
+
+    async function signIn() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        await getTokens(username, password);
+        if (state['Authorized'] == true) {
+            document.location.href += 'login';
+        }
     }
       
-    function signUp() {
-        document.location.href += 'login';
-        // console.log(document.location.href);
+    async function signUp() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        await createUserView(username, password, {dispatch});
+        await getTokens(username, password);
+        if (state['Authorized'] == true) {
+            document.location.href += 'login';
+        }
     } 
 
     function showPassword() {
@@ -89,7 +111,7 @@ function Preview() {
                     </div>
                     <div className='form-in'> 
                         <div className='intro-text'>Introduce yourself</div>
-                        <input className='username' placeholder='Username'></input> 
+                        <input className='username' placeholder='Username' id='username'></input> 
                         <input className='password' placeholder='Password' type="password" id="password"/>
                         <button onClick={showPassword} class='eye'><img src={EyeImg} class='eye-img' id='eye'/></button>
                         <button className='sign-in' onClick={signIn}>
