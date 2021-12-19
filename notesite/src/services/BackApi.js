@@ -193,6 +193,6 @@ export async function createUserView(username, password, {dispatch}) {
         if (!response.ok) {
             throw 'hui';
         }
-        return response.json()['data'   ]
+        return response.json()['data']
     })
 }

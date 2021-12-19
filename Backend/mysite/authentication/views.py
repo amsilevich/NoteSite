@@ -15,6 +15,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .models import *
 from .serializers import NoteSerializer
+from django.conf import settings
+import jwt
 
 from .serializers import MyTokenObtainPairSerializer, CustomUserSerializer
 
@@ -49,6 +51,14 @@ class NoteCreate(APIView):
         return Response(serializer.data)
 
     def post(self, request):
+        token = request.headers['Authorization'][4:]
+        print(token)
+        payload = jwt.decode(jwt=token, key=settings.SECRET_KEY, algorithms=['HS256'])
+        # user = CustomUser.objects.get(id=payload['user_id'])
+        print(payload)
+        data=request.data
+        data['author'] = payload['user_id']
+        print(data)
         serializer = NoteSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -57,8 +67,12 @@ class NoteCreate(APIView):
 
 
 class NoteList(APIView):
-    def get(self,request):
-        notes = Note.objects.order_by('-isPinned', 'id')  
+    def get(self, request):
+        token = request.headers['Authorization'][4:]
+        print(token)
+        payload = jwt.decode(jwt=token, key=settings.SECRET_KEY, algorithms=['HS256'])
+        notes = Note.objects.filter(author=payload['user_id']).order_by('-isPinned', 'id')  
+        print(notes)
         serializer_class = NoteSerializer(notes, many=True)
         return Response(serializer_class.data)
 

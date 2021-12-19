@@ -23,8 +23,8 @@ function Login() {
 
     if (state['LoadedData'] == false) {
         getNotesView({setNotes, dispatch})
+        console.log(notes)
     }
-
     function changeNote(id, title, text) {
         console.log(currentId['id'])
         changeNoteView(currentId['id'], title, text, {setNotes, dispatch})

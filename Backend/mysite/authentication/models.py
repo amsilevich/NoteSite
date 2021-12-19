@@ -10,6 +10,10 @@ class Note(models.Model):
     title = models.CharField(verbose_name='Заголовок', max_length=32, blank=True)
     text = models.TextField(verbose_name='Текст', blank=True)
     isPinned = models.BooleanField(verbose_name='Закреплено', default=False )
-
+    author = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        null=True
+    )
     def __str__(self):
         return self.title 
